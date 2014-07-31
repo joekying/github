@@ -30,30 +30,30 @@
 	<!--门诊处方单启动频率-->
 	<Outpdrugorderintertime>60</Outpdrugorderintertime>
 	<!--病案费用同步启动频率-->
-	<InFirstFeeintertime>60</InFirstFeeintertime>
+	<InFirstFee>2</InFirstFee>
 </Timer>
 <!--EMR数据库连接设置-->
-<EMRConnection driver="com.ibm.db2.jcc.DB2Driver">
-	<url>jdbc:db2://192.168.1.22:50000/htemr</url>
-	<user>db2admin</user>
-	<password>haitaiinc</password>
+<EMRConnection driver="oracle.jdbc.driver.OracleDriver">
+	<url>jdbc:oracle:thin:@172.16.10.11:1521:orcl</url>
+	<user>htemr</user>
+	<password>123456</password>
 </EMRConnection>
 <!--HIS数据库连接设置-->
-<HISConnection driver="com.microsoft.jdbc.sqlserver.SQLServerDriver">
-	<url>jdbc:microsoft:sqlserver://192.168.1.1:1433;DatabaseName=zsrmyy</url>
-	<user>emr</user>
-	<password>emr</password>
+<HISConnection driver="oracle.jdbc.driver.OracleDriver">
+	<url>jdbc:oracle:thin:@172.16.10.3:1521:hrp</url>
+	<user>bslis</user>
+	<password>bslis</password>
 </HISConnection>
-<!--PACS数据库连接设置-->
+<!--PACS数据库连接设置
 <PACSConnection driver="oracle.jdbc.driver.OracleDriver">
 	<url>jdbc:oracle:thin:@192.168.1.171:1521:pacs311</url>
 	<user>emr</user>
 	<password>123</password>
-</PACSConnection>
-<!--LIS数据库连接设置-->
+</PACSConnection>-->
+<!--LIS数据库连接设置
 <LISConnection driver="com.microsoft.sqlserver.jdbc.SQLServerDriver">
 	<url>jdbc:sqlserver://192.168.1.51:1433;DatabaseName=emr_lis</url>
 	<user>sa</user>
 	<password>sixflag</password>
-</LISConnection>
+</LISConnection>-->
 </EMRDTS>
