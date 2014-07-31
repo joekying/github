@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file stores all properties need by jmer. Property names must be in the
+    format:
+        prop.name.is.blah=value
+    That will be stored as:
+        <prop>
+            <name>
+                <is>
+                    <blah>value</blah>
+                </is>
+            </name>
+        </prop>
+
+     All properties must be under the "jmer" element.
+
+     This file should live in your jmerHome directory. The path to that directory
+     should be specified in your jive_init.properties file. The
+     jive_init.properties must be in your appserver's classpath.
+--><!-- root element, all properties must be under this element -->
+<jmer>
+		<isAutoRun>true</isAutoRun>
+		<!-- after sleep x millisecond, the thread will wake up-->
+		<threadInterval>60</threadInterval>
+		<dbconfigFilename>dbconfig.xml</dbconfigFilename>
+		<firstTime>2009-06-17 17:14:00</firstTime>
+    <connectionProvider>
+        <className>com.haitaiinc.emrinterface.core.SimpleConnection</className>
+    </connectionProvider>
+    <locale>
+        <country>CN</country>
+        <language>zh</language>
+        <timeZone>Etc/GMT+8</timeZone>
+    </locale>
+    
+    <showdebug>1</showdebug>
+    <!-- NEED CHECKDATA TABLE   ,LISDB/INLABCONTENT,BLPACSDB/INPACSCONTENT,,HISDB/INADVICE-->
+    <runTable>
+    	<tables>HISDB/MAINMR,HISDB/INPATIENT,HISDB/INCHANGEINFO,HISDB/INADVICE,HISDB/INFIRSTPAGE,BLPACSDB/INPACSCONTENT,LISDB/INLABCONTENT</tables>
+    </runTable>
+		
+		<!-- hangzhou bsoft HAI platform call url config -->
+    <!--haiURL>http://168.1.1.218:8082/services/AdapterInboundPointWs</haiURL-->
+    
+    <databaseHIS>
+        <defaultProvider>
+       	 	<isuse>1</isuse>
+       	 	<driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</driver>
+            <serverURL>jdbc:microsoft:sqlserver://192.168.1.1:1433;DatabaseName=zsrmyy</serverURL>
+            <username>emr</username>
+            <password>emr</password>
+            <minConnections>3</minConnections>
+            <maxConnections>10</maxConnections>
+            <connectionTimeout>0.5</connectionTimeout>
+        </defaultProvider>
+    	</databaseHIS>
+    
+    <databaseEMR>
+    	<defaultProvider>
+        	<isuse>1</isuse>
+          <driver>com.ibm.db2.jcc.DB2Driver</driver>
+          <serverURL>jdbc:db2://192.168.1.22:50000/htemr</serverURL>
+          <username>db2admin</username>
+          <password>haitaiinc</password>
+          <minConnections>3</minConnections>
+          <maxConnections>10</maxConnections>
+          <connectionTimeout>0.5</connectionTimeout> 
+    	</defaultProvider>
+    </databaseEMR>
+
+    <databasePACS>
+        <defaultProvider>
+        	<isuse>1</isuse>
+       	 	<driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</driver>
+            <serverURL>jdbc:microsoft:sqlserver://192.168.8.144:1433;DatabaseName=eWorldRIS</serverURL>
+            <username>emr</username>
+            <password>emr</password>
+            <minConnections>3</minConnections>
+            <maxConnections>10</maxConnections>
+            <connectionTimeout>0.5</connectionTimeout>
+        </defaultProvider>
+    </databasePACS>
+    
+    <databaseLIS>
+        <defaultProvider>
+        	<isuse>1</isuse>
+       	 	<driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</driver>
+            <serverURL>jdbc:microsoft:sqlserver://192.168.1.6:1433;DatabaseName=lisdb_2005</serverURL>
+            <username>emr</username>
+            <password>emr</password>
+            <minConnections>3</minConnections>
+            <maxConnections>10</maxConnections>
+            <connectionTimeout>0.5</connectionTimeout>
+        </defaultProvider>
+    </databaseLIS>   
+
+    <setup>true</setup>
+
+    <databaseFSPACS>
+        <defaultProvider>
+        	<isuse>0</isuse>
+            <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+            <serverURL>jdbc:sqlserver://192.168.0.173:1433;databaseName=HTEMR2</serverURL>
+            <username>sfphhis</username>
+            <password>sfphhis</password>
+            <minConnections>3</minConnections>
+            <maxConnections>10</maxConnections>
+            <connectionTimeout>0.5</connectionTimeout>
+        </defaultProvider>
+    </databaseFSPACS>
+	
+</jmer>

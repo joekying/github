@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<EMRDTS>
+<ModelSet>
+	<HISModel>1</HISModel>
+	<AdviceModel>0</AdviceModel>
+	<LISModel>0</LISModel>
+</ModelSet>
+<!--是否使用中文强制编码-->
+<useEncoding>1</useEncoding>
+<!--是否去除主索引末尾空格-->
+<useIDTrim>1</useIDTrim>
+<!--是否启动服务-->
+<isServer>0</isServer>
+<!--入院日期-->
+<inDate></inDate>
+<!--定时器设置-->
+<Timer>
+	<!--启动时间-->
+	<begintime>20100710163730</begintime>
+	<!--ADT启动频率-->
+	<ADTintertime>2</ADTintertime>
+	<!--ExamReport启动频率-->
+	<ExamReportintertime>30</ExamReportintertime>
+	<!--LabReportE启动频率-->
+	<LabReportintertime>10</LabReportintertime>
+	<!--Inadvice启动频率-->
+	<Inadviceintertime>60</Inadviceintertime>
+	<!--bingan启动频率-->
+	<binganintertime>10</binganintertime>
+	<!--门诊处方单启动频率-->
+	<Outpdrugorderintertime>60</Outpdrugorderintertime>
+	<!--病案费用同步启动频率-->
+	<InFirstFee>2</InFirstFee>
+</Timer>
+<!--EMR数据库连接设置-->
+<EMRConnection driver="oracle.jdbc.driver.OracleDriver">
+	<url>jdbc:oracle:thin:@172.16.10.11:1521:orcl</url>
+	<user>htemr</user>
+	<password>123456</password>
+</EMRConnection>
+<!--HIS数据库连接设置-->
+<HISConnection driver="oracle.jdbc.driver.OracleDriver">
+	<url>jdbc:oracle:thin:@172.16.10.3:1521:hrp</url>
+	<user>bslis</user>
+	<password>bslis</password>
+</HISConnection>
+<!--PACS数据库连接设置
+<PACSConnection driver="oracle.jdbc.driver.OracleDriver">
+	<url>jdbc:oracle:thin:@192.168.1.171:1521:pacs311</url>
+	<user>emr</user>
+	<password>123</password>
+</PACSConnection>-->
+<!--LIS数据库连接设置
+<LISConnection driver="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+	<url>jdbc:sqlserver://192.168.1.51:1433;DatabaseName=emr_lis</url>
+	<user>sa</user>
+	<password>sixflag</password>
+</LISConnection>-->
+</EMRDTS>
